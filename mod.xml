@@ -18,6 +18,8 @@
 
     <NeedsRestart>false</NeedsRestart>
 
+    <LevelHookFile>Data/Scripts/level_script.as</LevelHookFile>
+
     <!--
         <MenuItem title="TheTest" category="play">Data/Scripts/menu.as</MenuItem>
     -->
