@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<Mod>
+    <Id>com-the-test-campaign</Id> 
+    <Name>TheTest</Name> 
+
+    <Category>Campaign</Category>
+
+    <Thumbnail>Data/Images/thumb.png</Thumbnail>
+    <PreviewImage>Data/Images/full.png</PreviewImage>
+    
+    <Description>a HorRor wRld</Description>
+    <Version>1.0.0</Version>
+    <Author>DocNight</Author>
+    
+    <Tag>Campaign</Tag>
+
+    <SupportedVersion>*</SupportedVersion>
+
+    <NeedsRestart>false</NeedsRestart>
+
+    <!--
+        <MenuItem title="TheTest" category="play">Data/Scripts/menu.as</MenuItem>
+    -->
+
+    <Campaign title="TheTest"
+             type="general"
+             is_linear="true">
+       <Level title="The Ground" >
+              thetest.xml
+       </Level>
+   </Campaign>
+</Mod>
