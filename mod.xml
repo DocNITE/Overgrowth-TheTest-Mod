@@ -18,8 +18,6 @@
 
     <NeedsRestart>false</NeedsRestart>
 
-    <LevelHookFile>Data/Scripts/level_script.as</LevelHookFile>
-
     <!--
         <MenuItem title="TheTest" category="play">Data/Scripts/menu.as</MenuItem>
     -->
@@ -31,4 +29,6 @@
               thetest.xml
        </Level>
    </Campaign>
+
+   <Item category="Hotspot" title="TheTest: Music System" path="Data/Objects/Hotspots/thetest_hotspot.xml" thumbnail="Data/UI/spawner/thumbs/Hotspot/sign_icon.png"/>
 </Mod>
