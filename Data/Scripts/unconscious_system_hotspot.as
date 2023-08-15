@@ -38,7 +38,7 @@ void Update() {
 
     // do timers
     int num_timers = timers.length();
-    for(int i=0; i < num_timers; ++i) {
+    for(int i=0; i < num_timers; i++) {
 
         TimerInfo@ timer = timers[i];
         timer.Update();
@@ -48,7 +48,25 @@ void Update() {
                 timer.owner.ReceiveScriptMessage("restore_health");
 
             timers.removeAt(i);
+            return;
         }
+    }
+}
+
+void ReceiveMessage(string msg) {
+    TokenIterator token_iter;
+    token_iter.Init();
+
+    if(!token_iter.FindNextToken(msg)) {
+        return;
+    }
+
+    string token = token_iter.GetToken(msg);
+    
+    if (token == "reset") {
+        // reser timers
+        // NOTE: We might be rework it for save system
+        timers.resize(0);
     }
 }
 
