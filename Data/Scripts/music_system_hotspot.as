@@ -32,8 +32,17 @@ void ReceiveMessage(string msg) {
     }
 
     string token = token_iter.GetToken(msg);
+}
 
-    DebugText("receive_message_dbg", "ReceiveMessage: " + token, 15.0f);
+void DrawEditor(){
+    if(EditorModeActive()){
+        Object@ obj = ReadObjectFromID(hotspot.GetID());
+        DebugDrawBillboard("Data/UI/spawner/thumbs/Sounds/speaker_icon.png",
+                           obj.GetTranslation(),
+                           obj.GetScale()[1]*2.0,
+                           vec4(vec3(0.5), 1.0),
+                           _delete_on_draw);
+    }
 }
 
 /*void testSave() {

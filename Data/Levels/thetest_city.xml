@@ -1,0 +1,223 @@
+<?xml version="2.0" ?>
+<Type>saved</Type>
+<Name>thetest_city</Name>
+<Description></Description>
+<Shader>post</Shader>
+<Shadows>true</Shadows>
+<LoadingScreen>
+    <Image></Image>
+</LoadingScreen>
+<Terrain>
+    <Heightmap>Data/Prototypes/Lugaru/Village/Village_Height.png</Heightmap>
+    <ShaderExtra></ShaderExtra>
+    <DetailMap></DetailMap>
+    <ColorMap>Data/Prototypes/Lugaru/Village/Village_Color_Night.tga</ColorMap>
+    <WeightMap>Data/Prototypes/Lugaru/Village/Village_Weights.png</WeightMap>
+    <DetailMaps>
+        <DetailMap colorpath="Data/Textures/Terrain/DetailTextures/grass.tga" normalpath="Data/Textures/Terrain/DetailTextures/grass_normal.png" materialpath="Data/Materials/dirt.xml" />
+        <DetailMap colorpath="Data/Textures/Terrain/DetailTextures/dead_grass.tga" normalpath="Data/Textures/Terrain/DetailTextures/dead_grass_normal.tga" materialpath="Data/Materials/grass.xml" />
+        <DetailMap colorpath="Data/Textures/Terrain/DetailTextures/dead_leaves_c.tga" normalpath="Data/Textures/Terrain/DetailTextures/dead_leaves_n.tga" materialpath="Data/Materials/dirt.xml" />
+        <DetailMap colorpath="Data/Textures/Terrain/DetailTextures/dirt_rubble.tga" normalpath="Data/Textures/Terrain/DetailTextures/dirt_rubble_normal.tga" materialpath="Data/Materials/dirtyrock.xml" />
+    </DetailMaps>
+    <DetailObjects>
+        <DetailObject obj_path="Data/Objects/Plants/Groundcover/Grass/WildGrass.xml" weight_path="Data/Prototypes/Lugaru/Village/Village_GrassWeights.tga" normal_conform="1" density="7" min_embed="0.2" max_embed="0.4" min_scale="0.7" max_scale="2" view_distance="30" jitter_degrees="10" overbright="0" tint_weight="1" />
+        <DetailObject obj_path="Data/Objects/Plants/Groundcover/Grass/fall_tall_grass.xml" weight_path="Data/Prototypes/Lugaru/Village/Village_FallGrassWeights.tga" normal_conform="0.9" density="5" min_embed="0" max_embed="0.4" min_scale="2" max_scale="3" view_distance="50" jitter_degrees="10" overbright="0.2" tint_weight="1" />
+    </DetailObjects>
+</Terrain>
+<OutOfDate NavMesh="true" NavMeshParamHash="-1674835251" />
+<AmbientSounds />
+<Script></Script>
+<LevelScriptParameters>
+    <parameter name="Achievements" type="string" val="flawless, no_injuries, no_kills" />
+    <parameter name="Custom Shader" type="string" val="#RAINY" />
+    <parameter name="Fog amount" type="float" val="1" />
+    <parameter name="GPU Particle Field" type="string" val="#RAIN" />
+    <parameter name="HDR Black point" type="float" val="0.005" />
+    <parameter name="HDR Bloom multiplier" type="float" val="1" />
+    <parameter name="HDR White point" type="float" val="0.971" />
+    <parameter name="Level Boundaries" type="int" val="1" />
+    <parameter name="Load Tip" type="string" val="some funny place" />
+    <parameter name="Objectives" type="string" val="destroy_all" />
+    <parameter name="Saturation" type="float" val="1" />
+    <parameter name="Sky Brightness" type="float" val="1" />
+    <parameter name="Sky Rotation" type="float" val="0" />
+    <parameter name="Sky Tint" type="string" val="255, 255, 255" />
+</LevelScriptParameters>
+<NavMeshParameters generate="true" cell_size="0.3" cell_height="0.2" agent_height="1.7" agent_radius="0.4" agent_max_climb="1.5" agent_max_slope="60" />
+<Sky>
+    <DomeTexture>Data/Textures/skies/CloudySunset.tga</DomeTexture>
+    <SunAngularRad>0.313836</SunAngularRad>
+    <SunColorAngle>353.589</SunColorAngle>
+    <RayToSun r0="0.133113" r1="0.127179" r2="0.982907" />
+</Sky>
+<ActorObjects>
+    <CameraObject t0="155.807" t1="-45.7601" t2="302.198" s0="1" s1="1" s2="1" q0="-0.0979784" q1="0.550577" q2="-0.0652735" q3="-0.826441" euler_x="0.236008" euler_y="-1.17536" euler_z="0" id="0">
+        <parameters />
+    </CameraObject>
+    <ActorObject t0="128.564" t1="-54.939" t2="288.544" s0="1" s1="1" s2="1" q0="0" q1="0" q2="0" q3="1" euler_x="0" euler_y="0" euler_z="0" id="1" type_file="Data/Objects/IGF_Characters/IGF_TurnerActor.xml" is_player="1">
+        <parameters>
+            <parameter name="Aggression" type="float" val="0.5" />
+            <parameter name="Attack Damage" type="float" val="1" />
+            <parameter name="Attack Knockback" type="float" val="1" />
+            <parameter name="Attack Speed" type="float" val="1" />
+            <parameter name="Block Follow-up" type="float" val="0.5" />
+            <parameter name="Block Skill" type="float" val="0.5" />
+            <parameter name="Cannot Be Disarmed" type="int" val="0" />
+            <parameter name="Character Scale" type="float" val="1" />
+            <parameter name="Damage Resistance" type="float" val="1" />
+            <parameter name="Ear Size" type="float" val="1" />
+            <parameter name="Fall Damage Multiplier" type="float" val="1" />
+            <parameter name="Fat" type="float" val="0.5" />
+            <parameter name="Fear - Afraid At Health Level" type="float" val="0" />
+            <parameter name="Fear - Always Afraid On Sight" type="int" val="0" />
+            <parameter name="Fear - Causes Fear On Sight" type="int" val="0" />
+            <parameter name="Fear - Never Afraid On Sight" type="int" val="0" />
+            <parameter name="Focus FOV distance" type="float" val="100" />
+            <parameter name="Focus FOV horizontal" type="float" val="0.62834" />
+            <parameter name="Focus FOV vertical" type="float" val="0.62834" />
+            <parameter name="Ground Aggression" type="float" val="0.5" />
+            <parameter name="Knockout Shield" type="int" val="0" />
+            <parameter name="Left handed" type="int" val="0" />
+            <parameter name="Movement Speed" type="float" val="1" />
+            <parameter name="Muscle" type="float" val="0.5" />
+            <parameter name="No Look Around" type="int" val="0" />
+            <parameter name="Peripheral FOV distance" type="float" val="4" />
+            <parameter name="Peripheral FOV horizontal" type="float" val="1.41376" />
+            <parameter name="Peripheral FOV vertical" type="float" val="1.41376" />
+            <parameter name="Species" type="string" val="rabbit" />
+            <parameter name="Static" type="int" val="0" />
+            <parameter name="Stick To Nav Mesh" type="int" val="0" />
+            <parameter name="Teams" type="string" val="turner" />
+            <parameter name="Throw Counter Probability" type="float" val="0.4" />
+            <parameter name="Throw Trainer" type="int" val="0" />
+            <parameter name="Weapon Catch Skill" type="float" val="1" />
+            <parameter name="Wearing Metal Armor" type="int" val="0" />
+        </parameters>
+        <Connections>
+            <Connection id="-1" />
+        </Connections>
+        <ItemConnections />
+        <Palette>
+            <Color label="Cloth" channel="0" red="1" green="1" blue="1" />
+            <Color label="Rope" channel="1" red="1" green="1" blue="1" />
+            <Color label="Fur" channel="2" red="1" green="1" blue="1" />
+        </Palette>
+    </ActorObject>
+    <EnvObject t0="105.685" t1="-51.0627" t2="231.157" s0="1" s1="1" s2="1" q0="0" q1="0.653255" q2="0" q3="0.757138" euler_x="0" euler_y="1.42375" euler_z="0" id="5" color_r="1" color_g="1" color_b="1" overbright="0" type_file="Data/Objects/Buildings/terraces/cat_patio_ramp.xml">
+        <parameters />
+    </EnvObject>
+    <EnvObject t0="130.171" t1="-53.4749" t2="298.189" s0="0.828412" s1="0.845473" s2="0.97368" q0="0" q1="-0.166442" q2="0" q3="0.986051" euler_x="0" euler_y="-0.334441" euler_z="0" id="6" color_r="1" color_g="1" color_b="1" overbright="0" type_file="Data/Objects/Buildings/cat_town/hut_small.xml">
+        <parameters />
+    </EnvObject>
+    <EnvObject t0="125.606" t1="-52.4716" t2="296.941" s0="0.821467" s1="0.821467" s2="0.821467" q0="0" q1="-0.240605" q2="0" q3="0.970623" euler_x="0" euler_y="-0.485978" euler_z="0" id="7" color_r="1" color_g="1" color_b="1" overbright="0" type_file="Data/Objects/Buildings/cat_town/hut_large.xml">
+        <parameters />
+    </EnvObject>
+    <EnvObject t0="92.3344" t1="-47.3863" t2="276.211" s0="1" s1="1" s2="1" q0="0" q1="-0.250727" q2="0" q3="0.968058" euler_x="0" euler_y="-0.506863" euler_z="0" id="8" color_r="1" color_g="1" color_b="1" overbright="0" type_file="Data/Objects/Buildings/cat_town/high_tower.xml">
+        <parameters />
+    </EnvObject>
+    <EnvObject t0="129.538" t1="-54.8386" t2="265.793" s0="1" s1="1" s2="1" q0="-0.0710874" q1="0.00546169" q2="-0.101797" q3="0.992247" euler_x="-0.142669" euler_y="-0.00363429" euler_z="-0.20421" id="9" color_r="1" color_g="1" color_b="1" overbright="0" type_file="Data/Prototypes/OG/StuccoWall_SmallHole.xml">
+        <parameters />
+    </EnvObject>
+    <EnvObject t0="119.614" t1="-40.0379" t2="201.703" s0="1" s1="1" s2="1" q0="-0.0312771" q1="-0.744139" q2="0.096003" q3="0.66035" euler_x="-2.10694" euler_y="-1.35487" euler_z="2.19904" id="10" color_r="1" color_g="1" color_b="1" overbright="0" type_file="Data/Objects/therium/cinderbreathe_hightower.xml">
+        <parameters />
+    </EnvObject>
+    <EnvObject t0="97.1117" t1="-44.413" t2="197.109" s0="1" s1="1" s2="1" q0="-0.134941" q1="-0.0526478" q2="-0.0115758" q3="0.989386" euler_x="-0.270633" euler_y="-0.107509" euler_z="-0.00874784" id="11" color_r="1" color_g="1" color_b="1" overbright="0" type_file="Data/Objects/therium/cinderbreathe_hightower.xml">
+        <parameters />
+    </EnvObject>
+    <Hotspot t0="-19.8214" t1="102.371" t2="-4.33322" s0="0.483136" s1="0.483136" s2="0.483136" q0="0" q1="0" q2="0" q3="1" euler_x="0" euler_y="0" euler_z="0" id="12" type_file="Data/Objects/Hotspots/ambient_sound.xml">
+        <parameters>
+            <parameter name="Delay Max" type="float" val="10" />
+            <parameter name="Delay Min" type="float" val="3" />
+            <parameter name="Fade Distance" type="float" val="1" />
+            <parameter name="Gain" type="float" val="0.504" />
+            <parameter name="Global" type="int" val="1" />
+            <parameter name="Sound Path" type="string" val="Data/Sounds/weather/rain.wav" />
+            <parameter name="Wind Scale" type="int" val="1" />
+        </parameters>
+        <Connections />
+        <ConnectionsFrom />
+    </Hotspot>
+    <EnvObject t0="147.433" t1="-53.6136" t2="278.168" s0="0.556932" s1="0.556932" s2="0.556932" q0="0.00836754" q1="0.999465" q2="0.0116386" q3="0.029339" euler_x="3.11779" euler_y="0.0584852" euler_z="3.12415" id="13" color_r="1" color_g="1" color_b="1" overbright="0" type_file="Data/Objects/Buildings/cat_town/window_block.xml">
+        <parameters />
+    </EnvObject>
+    <EnvObject t0="146.868" t1="-58.1051" t2="265.821" s0="1" s1="1" s2="1" q0="-0.0959728" q1="0.0311651" q2="-0.0428114" q3="0.993975" euler_x="-0.19497" euler_y="0.0537631" euler_z="-0.0913476" id="14" color_r="1" color_g="1" color_b="1" overbright="0" type_file="Data/Objects/Buildings/cat_town/medium_wall.xml">
+        <parameters />
+    </EnvObject>
+    <EnvObject t0="110.446" t1="-32.353" t2="176.829" s0="1" s1="1" s2="1" q0="-0.00218016" q1="-0.106596" q2="0.0140795" q3="0.9942" euler_x="-0.00750722" euler_y="-0.213514" euler_z="0.0291259" id="15" color_r="1" color_g="1" color_b="1" overbright="0" type_file="Data/Objects/Buildings/terraces/cat_stairs.xml">
+        <parameters />
+    </EnvObject>
+    <EnvObject t0="73.4043" t1="-55.2471" t2="274.654" s0="1" s1="1" s2="1" q0="-0.0509009" q1="-0.710128" q2="-0.051613" q3="0.700331" euler_x="2.99649" euler_y="-1.55692" euler_z="3.14159" id="16" color_r="1" color_g="1" color_b="1" overbright="0" type_file="Data/Prototypes/OG/StuccoWall_Walkway.xml">
+        <parameters />
+    </EnvObject>
+    <EnvObject t0="135.158" t1="-52.4953" t2="300.259" s0="1" s1="1" s2="1" q0="-0.0160581" q1="-0.204307" q2="-0.00979175" q3="0.978724" euler_x="-0.0299386" euler_y="-0.411774" euler_z="-0.0137554" id="17" color_r="1" color_g="1" color_b="1" overbright="0" type_file="Data/Objects/Buildings/cat_town/high_tower.xml">
+        <parameters />
+    </EnvObject>
+    <EnvObject t0="129.441" t1="-52.2439" t2="286.248" s0="1" s1="1" s2="1" q0="0" q1="-0.981973" q2="0" q3="-0.189022" euler_x="-3.14159" euler_y="0.380332" euler_z="-3.14159" id="18" color_r="1" color_g="1" color_b="1" overbright="0" type_file="Data/Objects/Buildings/cat_town/hut_medium.xml">
+        <parameters />
+    </EnvObject>
+    <EnvObject t0="122.221" t1="-53.0839" t2="295.099" s0="0.751521" s1="0.851388" s2="0.672122" q0="0" q1="0.49336" q2="0" q3="0.869825" euler_x="0" euler_y="1.0319" euler_z="0" id="19" color_r="1" color_g="1" color_b="1" overbright="0" type_file="Data/Objects/Buildings/cat_town/hut_small.xml">
+        <parameters />
+    </EnvObject>
+    <Hotspot t0="-19.8164" t1="102.234" t2="-6.59532" s0="0.539858" s1="0.539858" s2="0.539858" q0="0" q1="0" q2="0" q3="1" euler_x="0" euler_y="0" euler_z="0" id="20" type_file="Data/Objects/Hotspots/music_system_hotspot.xml">
+        <parameters>
+            <parameter name="music" type="string" val="thetest" />
+            <parameter name="music_filename" type="string" val="brawing" />
+        </parameters>
+        <Connections />
+        <ConnectionsFrom />
+    </Hotspot>
+    <Hotspot t0="-19.6815" t1="102.229" t2="-8.94801" s0="0.554833" s1="0.554833" s2="0.554833" q0="0" q1="0" q2="0" q3="1" euler_x="0" euler_y="0" euler_z="0" id="21" type_file="Data/Objects/Hotspots/reset_system_hotspot.xml">
+        <parameters>
+            <parameter name="death_message" type="string" val="Press $attack$ to try again" />
+        </parameters>
+        <Connections />
+        <ConnectionsFrom />
+    </Hotspot>
+    <EnvObject t0="102.452" t1="-53.8357" t2="296.366" s0="1" s1="1" s2="1" q0="0" q1="0.95945" q2="0" q3="0.281879" euler_x="3.14159" euler_y="0.571504" euler_z="3.14159" id="22" color_r="1" color_g="1" color_b="1" overbright="0" type_file="Data/Objects/Buildings/rabbit_village/rabbit_hut_walls.xml">
+        <parameters />
+    </EnvObject>
+    <EnvObject t0="102.727" t1="-56.0775" t2="296.826" s0="1" s1="1" s2="1" q0="0" q1="0.961081" q2="0" q3="0.276267" euler_x="-3.14159" euler_y="0.559816" euler_z="-3.14159" id="23" color_r="1" color_g="1" color_b="1" overbright="0" type_file="Data/Objects/Buildings/rabbit_village/rabbit_hut_base.xml">
+        <parameters />
+    </EnvObject>
+    <EnvObject t0="124.507" t1="-49.839" t2="299.129" s0="0.596538" s1="0.596538" s2="0.596538" q0="0.00176537" q1="-0.206689" q2="0.000448736" q3="0.978405" euler_x="0.00357441" euler_y="-0.416381" euler_z="0.000162182" id="24" color_r="1" color_g="1" color_b="1" overbright="0" type_file="Data/Objects/Buildings/rabbit_village/rabbit_hut_square_hearth.xml">
+        <parameters />
+    </EnvObject>
+    <EnvObject t0="127.182" t1="-49.194" t2="285.493" s0="0.646267" s1="0.646267" s2="0.646267" q0="0" q1="-0.155881" q2="0" q3="0.987776" euler_x="0" euler_y="-0.313039" euler_z="0" id="25" color_r="1" color_g="1" color_b="1" overbright="0" type_file="Data/Objects/Buildings/rabbit_village/rabbit_hut_square_hearth.xml">
+        <parameters />
+    </EnvObject>
+    <EnvObject t0="102.225" t1="-53.0425" t2="296.42" s0="1" s1="1" s2="1" q0="0" q1="-0.272148" q2="0" q3="0.962255" euler_x="0" euler_y="-0.551249" euler_z="0" id="26" color_r="1" color_g="1" color_b="1" overbright="0" type_file="Data/Objects/Buildings/rabbit_village/rabbit_hut_roof.xml">
+        <parameters />
+    </EnvObject>
+    <EnvObject t0="105.192" t1="-54.0723" t2="291.666" s0="1" s1="1" s2="1" q0="0" q1="0.955498" q2="0" q3="0.294998" euler_x="-3.14159" euler_y="0.598908" euler_z="-3.14159" id="27" color_r="1" color_g="1" color_b="1" overbright="0" type_file="Data/Prototypes/Lugaru/HutDoor_Closed.xml">
+        <parameters />
+    </EnvObject>
+</ActorObjects>
+<RecentItems>
+    <SpawnerItem display_name="Large Stucco Stone Cat Patio Ramp" path="Data/Objects/Buildings/terraces/cat_patio_ramp.xml" thumbnail_path="Data/UI/spawner/thumbs/Static Objects/cat_patio_ramp.png" />
+    <SpawnerItem display_name="Stucco Hut Large" path="Data/Objects/Buildings/cat_town/hut_large.xml" thumbnail_path="Data/UI/spawner/thumbs/Static Objects/hut_large.png" />
+    <SpawnerItem display_name="Stucco High Tower" path="Data/Objects/Buildings/cat_town/high_tower.xml" thumbnail_path="Data/UI/spawner/thumbs/Static Objects/high_tower.png" />
+    <SpawnerItem display_name="Stucco Wall (small hole 1)" path="Data/Prototypes/OG/StuccoWall_SmallHole.xml" thumbnail_path="" />
+    <SpawnerItem display_name="Stucco Tower" path="Data/Objects/therium/cinderbreathe_hightower.xml" thumbnail_path="" />
+    <SpawnerItem display_name="Stucco Medium Tower" path="Data/Objects/Buildings/cat_town/medium_tower.xml" thumbnail_path="Data/UI/spawner/thumbs/Static Objects/medium_tower.png" />
+    <SpawnerItem display_name="Stucco Ramp Floor" path="Data/Objects/Buildings/cat_town/ramp_floor.xml" thumbnail_path="Data/UI/spawner/thumbs/Static Objects/ramp_floor.png" />
+    <SpawnerItem display_name="Stucco Short Trim" path="Data/Objects/Buildings/cat_town/short_trim.xml" thumbnail_path="Data/UI/spawner/thumbs/Static Objects/short_trim.png" />
+    <SpawnerItem display_name="Stucco Large Window Block" path="Data/Objects/Buildings/cat_town/window_block.xml" thumbnail_path="Data/UI/spawner/thumbs/Static Objects/window_block.png" />
+    <SpawnerItem display_name="Stucco Medium Wall" path="Data/Objects/Buildings/cat_town/medium_wall.xml" thumbnail_path="Data/UI/spawner/thumbs/Static Objects/medium_wall.png" />
+    <SpawnerItem display_name="Stucco House 2" path="Data/Prototypes/OG/WindowBlock_Mod2.xml" thumbnail_path="" />
+    <SpawnerItem display_name="Stucco House 1" path="Data/Prototypes/OG/WindowBlock_Mod1.xml" thumbnail_path="" />
+    <SpawnerItem display_name="Stucco House 3" path="Data/Prototypes/OG/WindowBlock_Mod3.xml" thumbnail_path="" />
+    <SpawnerItem display_name="Large Stucco Stone Cat Stairs" path="Data/Objects/Buildings/terraces/cat_stairs.xml" thumbnail_path="Data/UI/spawner/thumbs/Static Objects/cat_stairs.png" />
+    <SpawnerItem display_name="Stucco Long Trim" path="Data/Objects/Buildings/cat_town/long_trim.xml" thumbnail_path="Data/UI/spawner/thumbs/Static Objects/long_trim.png" />
+    <SpawnerItem display_name="Stucco Walkway" path="Data/Prototypes/OG/StuccoWall_Walkway.xml" thumbnail_path="" />
+    <SpawnerItem display_name="Stucco Hut Medium" path="Data/Objects/Buildings/cat_town/hut_medium.xml" thumbnail_path="Data/UI/spawner/thumbs/Static Objects/hut_medium.png" />
+    <SpawnerItem display_name="Stucco Hut Small" path="Data/Objects/Buildings/cat_town/hut_small.xml" thumbnail_path="Data/UI/spawner/thumbs/Static Objects/hut_small.png" />
+    <SpawnerItem display_name="Wooden Hut Door Open" path="Data/Prototypes/Lugaru/HutDoor_Open.xml" thumbnail_path="" />
+    <SpawnerItem display_name="Rabbit Hut Whole" path="Data/Objects/Buildings/rabbit_village/rabbit_hut_whole.xml" thumbnail_path="Data/UI/spawner/thumbs/Static Objects/rabbit_hut_whole.png" />
+    <SpawnerItem display_name="Rabbit Hut Walls" path="Data/Objects/Buildings/rabbit_village/rabbit_hut_walls.xml" thumbnail_path="Data/UI/spawner/thumbs/Static Objects/rabbit_hut_walls.png" />
+    <SpawnerItem display_name="Rabbit Hut Base" path="Data/Objects/Buildings/rabbit_village/rabbit_hut_base.xml" thumbnail_path="Data/UI/spawner/thumbs/Static Objects/rabbit_hut_base.png" />
+    <SpawnerItem display_name="Rabbit Hut Round Hearth" path="Data/Objects/Buildings/rabbit_village/rabbit_hut_round_hearth.xml" thumbnail_path="Data/UI/spawner/thumbs/Static Objects/rabbit_hut_round_hearth.png" />
+    <SpawnerItem display_name="Rabbit Hut Square Hearth" path="Data/Objects/Buildings/rabbit_village/rabbit_hut_square_hearth.xml" thumbnail_path="Data/UI/spawner/thumbs/Static Objects/rabbit_hut_square_hearth.png" />
+    <SpawnerItem display_name="Rabbit Hut Roof" path="Data/Objects/Buildings/rabbit_village/rabbit_hut_roof.xml" thumbnail_path="Data/UI/spawner/thumbs/Static Objects/rabbit_hut_roof.png" />
+    <SpawnerItem display_name="Stone Wooden Shutter Windows" path="Data/Objects/Buildings/cat_town/shutter_windows.xml" thumbnail_path="Data/UI/spawner/thumbs/Static Objects/shutter_windows.png" />
+    <SpawnerItem display_name="Wooden Hut Door Closed" path="Data/Prototypes/Lugaru/HutDoor_Closed.xml" thumbnail_path="" />
+</RecentItems>

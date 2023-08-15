@@ -30,5 +30,8 @@
        </Level>
    </Campaign>
 
-   <Item category="Hotspot" title="TheTest: Music System" path="Data/Objects/Hotspots/thetest_hotspot.xml" thumbnail="Data/UI/spawner/thumbs/Hotspot/sign_icon.png"/>
+    <Item category="Hotspot" title="TheTest: music_system_hotspot" path="Data/Objects/Hotspots/music_system_hotspot.xml" thumbnail="Data/UI/spawner/thumbs/Hotspot/sign_icon.png"/>
+    <Item category="Hotspot" title="TheTest: reset_system_hotspot" path="Data/Objects/Hotspots/reset_system_hotspot.xml" thumbnail="Data/UI/spawner/thumbs/Hotspot/sign_icon.png"/>
+    <Item category="Hotspot" title="TheTest: hud_system_hotspot" path="Data/Objects/Hotspots/hud_system_hotspot.xml" thumbnail="Data/UI/spawner/thumbs/Hotspot/sign_icon.png"/>
+    <Item category="Hotspot" title="TheTest: unconscious_system_hotspot" path="Data/Objects/Hotspots/unconscious_system_hotspot.xml" thumbnail="Data/UI/spawner/thumbs/Hotspot/sign_icon.png"/>
 </Mod>
