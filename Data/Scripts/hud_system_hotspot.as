@@ -1,33 +1,21 @@
 #include "threatcheck.as"
 
-// TODO: Remade for AHGUI
-
-TextureAssetRef testTexture1;
-TextureAssetRef testTexture2;
-string inputTextForClipboard;
-
-void DrawEditord() {
-    ImGui_Begin("TEST DRAW STUFF", ImGuiWindowFlags_NoTitleBar|ImGuiWindowFlags_NoResize|ImGuiWindowFlags_NoMove);
-    ImGui_PushStyleColor(ImGuiCol_WindowBg, vec4(1.0f, 1.0f, 1.0f, 0.0f));
-    ImDrawList_AddText(vec2(300.0, 300.0), ImGui_GetColorU32(1.0, 0.0, 1.0, 1.0), "THIS IS A TEST!!!!");
-    ImDrawList_AddRectFilled(vec2(300.0, 300.0), vec2(500.0, 500.0), ImGui_GetColorU32(ImGuiCol_TitleBg), 12.0, ImDrawCornerFlags_TopLeft | ImDrawCornerFlags_BotRight);
-    ImGui_End();
-}
-
-
-class BarControl {
+class HealthBar {
     float value;
     float max_value;
 
-    string texture = "Data/Textures/diffuse.tga";
-    vec3 color = vec3(1.0f, 1.0f, 1.0f);
-    vec3 position;
-    vec3 size;
-    int zindex = 3;
+    vec2 position;
+    vec2 size;
 
-    BarControl() {}
+    //float cut_width_value = 0.24691358;
 
-    BarControl(float val, float max) {
+    TextureAssetRef hp_icon;
+    TextureAssetRef hp_progress;
+    TextureAssetRef hp_background;
+
+    HealthBar() {}
+
+    HealthBar(float val, float max) {
         value = val;
         max_value = max;
     }
@@ -36,33 +24,46 @@ class BarControl {
         if (value <= 0.0f)
             value = 0.0f;
 
-        // draw background
-        ImGui_PushStyleColor(ImGuiCol_TitleBg, vec4(vec3(color.x*0.5f, color.y*0.5f, color.z*0.5f), 1.0f));
-        ImDrawList_AddRectFilled(vec2(position.x, position.y), vec2(position.x+size.x, position.y+size.y), ImGui_GetColorU32(ImGuiCol_TitleBg), 0.0, ImDrawCornerFlags_TopLeft | ImDrawCornerFlags_BotRight);
+        if(!hp_icon.IsValid()) {
+            hp_icon = LoadTexture("Data/Images/hp_icon.png");
+        }
+        if(!hp_progress.IsValid()) {
+            hp_progress = LoadTexture("Data/Images/hp_progress.png");
+        }
+        if(!hp_background.IsValid()) {
+            hp_background = LoadTexture("Data/Images/hp_background.png");
+        }
 
+        // draw background
+        //ImGui_PushStyleColor(ImGuiCol_TitleBg, vec4(vec3(color.x*0.5f, color.y*0.5f, color.z*0.5f), 1.0f));
+        //ImDrawList_AddRectFilled(vec2(position.x, position.y), vec2(position.x+size.x, position.y+size.y), ImGui_GetColorU32(ImGuiCol_TitleBg), 0.0, ImDrawCornerFlags_TopLeft | ImDrawCornerFlags_BotRight);
+        
+        ImGui_PushStyleColor(ImGuiCol_TitleBg, vec4(1.0f, 1.0f, 1.0f, 1.0f));
+        ImDrawList_AddImage(hp_background, position, position + size, vec2(0,0), vec2(1, 1));
+        ImDrawList_AddImage(hp_progress, position, position + vec2(size.x*value, size.y), vec2(0,0), vec2(value, 1));
+        ImDrawList_AddImage(hp_icon, position, position + size, vec2(0,0), vec2(1, 1)); 
         // draw content
-        ImGui_PushStyleColor(ImGuiCol_TitleBg, vec4(color, 1.0f));
-        ImDrawList_AddRectFilled(vec2(position.x, position.y), vec2(position.x+(size.x*value), position.y+size.y), ImGui_GetColorU32(ImGuiCol_TitleBg), 1.0, ImDrawCornerFlags_TopLeft | ImDrawCornerFlags_BotRight);
+        //ImGui_PushStyleColor(ImGuiCol_TitleBg, vec4(color, 1.0f));
+        //ImDrawList_AddRectFilled(vec2(position.x, position.y), vec2(position.x+(size.x*value), position.y+size.y), ImGui_GetColorU32(ImGuiCol_TitleBg), 1.0, ImDrawCornerFlags_TopLeft | ImDrawCornerFlags_BotRight);
     }
 }
 
 enum HudOrientation {
     BOTTOM_RIGHT,
-    BOTTOM_LEFT
+    BOTTOM_LEFT,
+    TOP_LEFT
 }
 
-class HeroHUD {
+class HealthHUD {
     int char_id;
     HudOrientation orientation;
-    string texture = "Data/Textures/diffuse.tga";
-    vec3 size;
     float padding = 10.0f;
     float safe_padding = 20.0f;
-    float height_padding = 5.0f;
-    float transparency = 0.75f;
+    float transparency = 0.0f;
+    vec2 size = vec2(405.0f / 1.3, 256.0f / 1.3);
     int zindex = 2;
 
-    BarControl health_bar = BarControl(1.0f, 1.0f);
+    HealthBar health_bar = HealthBar(1.0f, 1.0f);
 
     void Init() {}
 
@@ -71,61 +72,54 @@ class HeroHUD {
 
         float health_value = char.GetFloatVar("temp_health"); // or blood_health
 
-        // Change color if character was dead
-        if (char.GetIntVar("knocked_out") == _dead) {
-            health_bar.color = color_bar_dead;
-            // I there is not need check blood level
-            health_value = 0.0f; // char.GetFloatVar("blood_health");
-        }
-        else {
-            health_bar.color = color_bar_health;
-        }
+        // Change value if character was dead
+        if (char.GetIntVar("knocked_out") == _dead) 
+            health_value = 0.0f; // OR: char.GetFloatVar("blood_health");
 
+        float xpos = 0;
+        float ypos = 0;
         // Position hud on screen
         if (orientation == BOTTOM_RIGHT) {
-            float xpos = GetScreenWidth() - size.x - safe_padding;
-            float ypos = GetScreenHeight() - size.y - safe_padding;
-
-            // draw background
-            ImGui_Begin("", ImGuiWindowFlags_NoTitleBar|ImGuiWindowFlags_NoResize|ImGuiWindowFlags_NoMove);
-            ImGui_PushStyleColor(ImGuiCol_WindowBg, vec4(0.0f, 0.0f, 0.0f, transparency));
-            ImGui_SetWindowPos(vec2(xpos, ypos));
-            ImGui_SetWindowSize(vec2(size.x, size.y));
-            //ImDrawList_AddText(vec2(300.0, 300.0), ImGui_GetColorU32(1.0, 0.0, 1.0, 1.0), "THIS IS A TEST!!!!");
-            //ImDrawList_AddRectFilled(vec2(300.0, 300.0), vec2(500.0, 500.0), ImGui_GetColorU32(ImGuiCol_TitleBg), 12.0, ImDrawCornerFlags_TopLeft | ImDrawCornerFlags_BotRight);
-
-            health_bar.position = vec3(xpos + padding, ypos + padding, 0.0f);
-            health_bar.size = vec3(180.0f, 20.0f, 0.0f);
-            health_bar.value = health_value;
-            health_bar.zindex = zindex + 1;
-            health_bar.DrawGUI();
-
-            ImGui_End();
+             xpos = GetScreenWidth() - size.x - safe_padding;
+             ypos = GetScreenHeight() - (size.y/2) - safe_padding;
+        } else if (orientation == TOP_LEFT) {
+             xpos = safe_padding*2;
+             ypos = safe_padding*1.5;
         }
+
+        // draw background
+        ImGui_Begin("", ImGuiWindowFlags_NoTitleBar|ImGuiWindowFlags_NoResize|ImGuiWindowFlags_NoMove);
+        ImGui_PushStyleColor(ImGuiCol_WindowBg, vec4(0.0f, 0.0f, 0.0f, transparency));
+        ImGui_SetWindowPos(vec2(xpos-padding, ypos-padding));
+        ImGui_SetWindowSize(vec2(size.x+padding, (size.y/2)+padding));
+        
+        health_bar.position = vec2(xpos-(padding/2), (ypos - (size.y/4))-(padding/2));
+        health_bar.size = size;
+        health_bar.value = health_value;
+        health_bar.DrawGUI();
+
+        ImGui_End();
     }
 }
 
-HeroHUD hero_hud;
+HealthHUD health_hud;
 
 vec3 color_bar_health(0.8f, 0.2f, 0.2f);
 vec3 color_bar_stamina(0.2f, 0.8f, 0.2f);
 vec3 color_bar_dead(0.0f, 0.0f, 1.0f);
 
 void Init() {
-    float width = 200;
-    float height = 40;
-
-    hero_hud.Init();
-    hero_hud.orientation = BOTTOM_RIGHT;
-    hero_hud.size = vec3(200.0f, 40.0f, 0.0f);
+    health_hud.Init();
 }
 
 void Draw() {
     int player_id = GetPlayerCharacterID();
 
     if(player_id != -1 && ObjectExists(player_id)){
-        hero_hud.char_id = player_id;
-        hero_hud.DrawGUI();
+        health_hud.char_id = player_id;
+        health_hud.orientation = TOP_LEFT;
+        health_hud.transparency = 0.0f;
+        health_hud.DrawGUI();
     }
 }
 

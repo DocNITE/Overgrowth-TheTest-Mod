@@ -34,7 +34,7 @@
     <RayToSun r0="0.121363" r1="0.062051" r2="0.990667" />
 </Sky>
 <ActorObjects>
-    <CameraObject t0="10.3713" t1="12.5193" t2="-4.65976" s0="1" s1="1" s2="1" q0="-0.222948" q1="0.22693" q2="-0.053451" q3="-0.946541" euler_x="0.462646" euler_y="-0.470611" euler_z="0" id="0">
+    <CameraObject t0="3.99084" t1="8.83805" t2="-12.8607" s0="1" s1="1" s2="1" q0="-0.184929" q1="-0.132962" q2="0.0252606" q3="-0.973388" euler_x="0.375494" euler_y="0.271513" euler_z="0" id="0">
         <parameters />
     </CameraObject>
     <EnvObject t0="4.38078" t1="3.74204" t2="-15.184" s0="5.93193" s1="1" s2="9.26919" q0="0" q1="0" q2="0" q3="1" euler_x="0" euler_y="0" euler_z="0" id="1" color_r="0" color_g="0" color_b="0" overbright="0" type_file="Data/Objects/primitives/edged_cube.xml">
@@ -111,14 +111,14 @@
         <Connections />
         <ConnectionsFrom />
     </Hotspot>
-    <ActorObject t0="2.03691" t1="4.8991" t2="-9.26572" s0="1" s1="1" s2="1" q0="0" q1="0.0193785" q2="0" q3="0.999812" euler_x="0" euler_y="0.0387593" euler_z="0" id="9" type_file="Data/Objects/characters/cats/male_cat_actor.xml" is_player="0">
+    <ActorObject t0="2.03691" t1="4.8991" t2="-9.26572" s0="1" s1="1" s2="1" q0="0" q1="0.0193785" q2="0" q3="0.999812" euler_x="0" euler_y="0.0387594" euler_z="0" id="9" type_file="Data/Objects/characters/cats/male_cat_actor.xml" is_player="0">
         <parameters>
-            <parameter name="Aggression" type="float" val="0.5" />
+            <parameter name="Aggression" type="float" val="1" />
             <parameter name="Attack Damage" type="float" val="1" />
             <parameter name="Attack Knockback" type="float" val="1" />
             <parameter name="Attack Speed" type="float" val="1" />
             <parameter name="Block Follow-up" type="float" val="0.5" />
-            <parameter name="Block Skill" type="float" val="0.5" />
+            <parameter name="Block Skill" type="float" val="1" />
             <parameter name="Cannot Be Disarmed" type="int" val="0" />
             <parameter name="Character Scale" type="float" val="1" />
             <parameter name="Damage Resistance" type="float" val="1" />
@@ -136,7 +136,7 @@
             <parameter name="Knockout Shield" type="int" val="0" />
             <parameter name="Left handed" type="int" val="0" />
             <parameter name="Movement Speed" type="float" val="1" />
-            <parameter name="Muscle" type="float" val="0.5" />
+            <parameter name="Muscle" type="float" val="0.67826" />
             <parameter name="No Look Around" type="int" val="0" />
             <parameter name="Peripheral FOV distance" type="float" val="4" />
             <parameter name="Peripheral FOV horizontal" type="float" val="1.41376" />
