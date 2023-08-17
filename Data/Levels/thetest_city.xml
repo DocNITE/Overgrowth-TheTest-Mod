@@ -158,14 +158,6 @@
     <EnvObject t0="122.221" t1="-53.0839" t2="295.099" s0="0.751521" s1="0.851388" s2="0.672122" q0="0" q1="0.49336" q2="0" q3="0.869825" euler_x="0" euler_y="1.0319" euler_z="0" id="19" color_r="1" color_g="1" color_b="1" overbright="0" type_file="Data/Objects/Buildings/cat_town/hut_small.xml">
         <parameters />
     </EnvObject>
-    <Hotspot t0="-19.8164" t1="102.234" t2="-6.59532" s0="0.539858" s1="0.539858" s2="0.539858" q0="0" q1="0" q2="0" q3="1" euler_x="0" euler_y="0" euler_z="0" id="20" type_file="Data/Objects/Hotspots/music_system_hotspot.xml">
-        <parameters>
-            <parameter name="music" type="string" val="thetest" />
-            <parameter name="music_filename" type="string" val="brawing" />
-        </parameters>
-        <Connections />
-        <ConnectionsFrom />
-    </Hotspot>
     <Hotspot t0="-19.6815" t1="102.229" t2="-8.94801" s0="0.554833" s1="0.554833" s2="0.554833" q0="0" q1="0" q2="0" q3="1" euler_x="0" euler_y="0" euler_z="0" id="21" type_file="Data/Objects/Hotspots/reset_system_hotspot.xml">
         <parameters>
             <parameter name="death_message" type="string" val="Press $attack$ to try again" />

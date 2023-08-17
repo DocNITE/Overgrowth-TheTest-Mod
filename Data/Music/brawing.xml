@@ -1,0 +1,7 @@
+<?xml version="2.0" ?>
+<Music version="1">
+    <Song name="brawing_normal" type="single" file_path="Data/Music/The-Witcher-3-Oxenfurt.ogg" />
+    <Song name="brawing_threat" type="single" file_path="Data/Music/The-Witcher-2-Assassin-Encounter.ogg" />
+    <Song name="brawing_combat" type="single" file_path="Data/Music/The-Witcher-3-Eyes-Of-The-Wolf.ogg" />
+    <Song name="brawing_sad" type="single" file_path="Data/Music/The-Witcher-3-Oxenfurt.ogg" />
+</Music>

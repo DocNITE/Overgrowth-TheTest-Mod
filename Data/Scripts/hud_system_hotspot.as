@@ -1,6 +1,6 @@
 #include "threatcheck.as"
 
-class HealthBar {
+class HUDBar {
     float value;
     float max_value;
 
@@ -13,9 +13,9 @@ class HealthBar {
     TextureAssetRef hp_progress;
     TextureAssetRef hp_background;
 
-    HealthBar() {}
+    HUDBar() {}
 
-    HealthBar(float val, float max) {
+    HUDBar(float val, float max) {
         value = val;
         max_value = max;
     }
@@ -63,7 +63,7 @@ class HealthHUD {
     vec2 size = vec2(405.0f / 1.3, 256.0f / 1.3);
     int zindex = 2;
 
-    HealthBar health_bar = HealthBar(1.0f, 1.0f);
+    HUDBar health_bar = HUDBar(1.0f, 1.0f);
 
     void Init() {}
 

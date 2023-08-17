@@ -235,14 +235,6 @@
     <EnvObject t0="-119.92" t1="-27.6069" t2="3.06158" s0="1" s1="1" s2="1" q0="0" q1="0" q2="0" q3="1" euler_x="0" euler_y="0" euler_z="0" id="17" color_r="1" color_g="1" color_b="1" overbright="0" type_file="Data/Objects/Buildings/rabbit_village/rabbit_hut_roof.xml">
         <parameters />
     </EnvObject>
-    <Hotspot t0="-21.0566" t1="-5.57232" t2="-32.6925" s0="0.539858" s1="0.539858" s2="0.539858" q0="0" q1="0" q2="0" q3="1" euler_x="0" euler_y="0" euler_z="0" id="20" type_file="Data/Objects/Hotspots/music_system_hotspot.xml">
-        <parameters>
-            <parameter name="music" type="string" val="thetest" />
-            <parameter name="music_filename" type="string" val="horror" />
-        </parameters>
-        <Connections />
-        <ConnectionsFrom />
-    </Hotspot>
     <Hotspot t0="-20.9217" t1="-5.57745" t2="-35.0452" s0="0.554833" s1="0.554833" s2="0.554833" q0="0" q1="0" q2="0" q3="1" euler_x="0" euler_y="0" euler_z="0" id="21" type_file="Data/Objects/Hotspots/reset_system_hotspot.xml">
         <parameters />
         <Connections />
