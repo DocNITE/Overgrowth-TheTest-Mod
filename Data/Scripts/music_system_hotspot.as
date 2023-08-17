@@ -67,6 +67,8 @@ void DrawEditor(){
                            vec4(vec3(0.5), 1.0),
                            _delete_on_draw);
     }
+
+    //DrawEditor2();
 }
 
 void SetupMusic() {
@@ -128,3 +130,45 @@ void SetMusic(AmbientState state) {
 SavedLevel@ GetSaveFile() {
     return save_file.GetSave("thetest","global","lol");
 }*/
+
+TextureAssetRef testTexture1;
+TextureAssetRef testTexture2;
+string inputTextForClipboard;
+
+void DrawEditor2() {
+    if(!testTexture1.IsValid()) {
+        testTexture1 = LoadTexture("Data/Textures/ya.tga");
+    }
+
+    if(!testTexture2.IsValid()) {
+        testTexture2 = LoadTexture("Data/Textures/water_foam.jpg");
+    }
+
+    ImGui_Begin("TEST DRAW STUFF");
+
+        ImGui_SetWindowFontScale(1.0f);
+
+    ImGui_Text("THIS IS A выEST");
+
+    // --- Clipboard stuff. Unrelated to low level drawing, just happened to do it at the same time
+    ImGui_Text(ImGui_GetClipboardText());
+    ImGui_InputText("", inputTextForClipboard, 64);
+
+    // --- Primitive drawing
+    ImDrawList_AddImage(
+        testTexture1,
+        vec2(400.0, 300.0), vec2(500.0, 400.0), vec2(0.0), vec2(1.0),
+        ImGui_GetColorU32(1.0, 0.0, 0.0, 1.0));
+    ImDrawList_AddImageQuad(
+        testTexture1,
+        vec2(500.0, 500.0), vec2(600.0, 400.0), vec2(700.0, 500.0), vec2(600.0, 600.0),
+        vec2(0, 0), vec2(1, 0), vec2(1, 1), vec2(0, 1),
+        ImGui_GetColorU32(0.0, 1.0, 0.0, 1.0));
+    ImDrawList_AddImageRounded(
+        testTexture2,
+        vec2(500.0, 300.0), vec2(600.0, 400.0), vec2(0.0), vec2(1.0),
+        ImGui_GetColorU32(0.0, 1.0, 1.0, 1.0),
+        32.0,
+        ImDrawCornerFlags_TopLeft | ImDrawCornerFlags_BotRight);
+    ImGui_End();
+}
